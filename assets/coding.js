@@ -34,7 +34,7 @@ buttonEl.textContent = "Start";
 highScoreEl.textContent = "Highscore Leader Board";
 timerEl.textContent = "0";
 
-// appending of elements
+// appending of elements for the beginning page
 body.appendChild(highScoreEl);
 body.appendChild(timerEl);
 body.appendChild(h1El);
@@ -52,7 +52,25 @@ h1El.setAttribute("style", "font-size: 100px; color:darkgreen; padding: 135px;")
 paragraphEl.setAttribute("style", "background-color: limegreen; color: darkgreen; font-size: 25px;");
 buttonEl.setAttribute("style", " display: block; margin: 0 auto; border: limegreen; border-style: solid; border-width: thick; border-radius:20px; font-size: 20px; background-color: white;");
 
-generateBtn.addEventListener("click",);
+// resets the page when needed. 
+function clear(parent) {
+    while(parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+};
+
+//draws forth a question from the variables below
+function drawQuestion ()
+    {
+        
+    }
+
+// Starting the Quiz
+buttonEl.onclick = function startQuiz() 
+    {
+        clear(body);
+
+    };
 
 
 
