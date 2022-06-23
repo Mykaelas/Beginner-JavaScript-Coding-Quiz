@@ -34,6 +34,9 @@ h1El.textContent = "Welcome to my quiz!";
 paragraphEl.textContent = "Here is a very short quiz to test your JavaScript knowledge. Try to answer each question as quickly and CORRECTLY, as you can! Each incorrect answer will cause you to lose points. Try your best to get first place on the Highscore board.";
 buttonEl.textContent = "Start";
 timerEl.textContent = "0";
+var sec = 30;
+var topScores = [];
+
 
 // appending of elements for the beginning page
 body.appendChild(timerEl);
@@ -69,7 +72,10 @@ function returnHome() {
     body.appendChild(infoEl);
     infoEl.appendChild(paragraphEl);
     infoEl.appendChild(buttonEl);
+    window.prompt("Insert your initials here:")
     window.location.href="./leaderboard.html";
+   
+
 }
 //draws forth a question from the variables below
 function drawQuestion ()
@@ -98,7 +104,6 @@ function drawQuestion ()
 
             counter++;
             if (counter > 5) {
-                window.prompt("Insert your name here");
                 clear(body);
                returnHome();
                return; 
@@ -109,6 +114,7 @@ function drawQuestion ()
             }
             else {
                 window.alert("Incorrect.")
+                sec = sec - 2
             }
             drawQuestion();
             
@@ -121,6 +127,7 @@ function drawQuestion ()
             }
             else {
                 window.alert("Incorrect.")
+                sec = sec - 2
 
             }
             drawQuestion();
@@ -132,6 +139,7 @@ function drawQuestion ()
             }
             else {
                 window.alert("Incorrect.")
+                sec = sec - 2
 
             }
             drawQuestion();
@@ -143,6 +151,7 @@ function drawQuestion ()
             }
             else {
                 window.alert("Incorrect.")
+                sec = sec - 2
 
             }
             drawQuestion();
@@ -162,34 +171,18 @@ buttonEl.onclick = function startQuiz()
  
 // functional timer
 function timer() {
-    var sec = 30;
     var stopwatch = setInterval(function() {
         timerEl.textContent='00:' + sec;
         sec--;
         if (sec < 0 || counter > 5) {
             clearTimeout(stopwatch);
         }
+        if (sec < 0) {
+            window.alert('Game Over!');
+        }
     }, 1000)
 }
  
-// High Score Function
-
-function saveHighScore(score, highScores) {
-    const name = prompt('Congratulations! Enter your Initials Here: ');
-    const newScore = { score, name };
-    
-    // 1. Add to list
-    highScores.push(newScore);
-  
-    // 2. Sort the list
-    highScores.sort((a, b) => b.score - a.score);
-    
-    // 3. Select new list
-    highScores.splice(NO_OF_HIGH_SCORES);
-    
-    // 4. Save to local storage
-    localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
-  };
 
 
 var questions = [
