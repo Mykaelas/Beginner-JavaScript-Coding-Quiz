@@ -12,15 +12,16 @@ body {
 a {
     font-size: 25px;
     text-decoration: none;
-    color: var(--primary);
+    color: brown;
 }
 
 h2 {
     text-align: center;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 55px;
     color: var(--primary);
     background-color: white ;
+    margin: 0 15rem 2rem;
 }
 
 table { 
@@ -33,8 +34,13 @@ table {
 th, td {
     flex-direction: column;    
     border: 3px solid black;
-    padding: 0 50px 5px;
-    font-size: 40px;
+    padding: 0 50px 5px ;
+    font-size: 20px;
     align-items: center;
     background-color: white;
+}
+
+th {
+    display: block;
+    border-spacing: 50px;
 }

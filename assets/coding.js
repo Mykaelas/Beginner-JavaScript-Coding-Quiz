@@ -30,18 +30,18 @@ var button4El = document.createElement("button");
 
 
 // text content elements
+timerEl.textContent = "0";
 h1El.textContent = "Welcome to my quiz!";
 paragraphEl.textContent = "Here is a very short quiz to test your JavaScript knowledge. Try to answer each question as quickly and CORRECTLY, as you can! Each incorrect answer will cause you to lose points. Try your best to get first place on the Highscore board.";
 buttonEl.textContent = "Start";
-timerEl.textContent = "0";
 var sec = 30;
 var topScores = [];
 
 
 // appending of elements for the beginning page
 body.appendChild(timerEl);
-body.appendChild(h1El);
 body.appendChild(infoEl);
+infoEl.appendChild(h1El);
 infoEl.appendChild(paragraphEl);
 infoEl.appendChild(buttonEl);
 
@@ -49,14 +49,14 @@ infoEl.appendChild(buttonEl);
 var counter = 0;
 
 
-// Element attributes/CSS of the elements
-timerEl.setAttribute("style", "text-align: right; font-size: 35px;");
-body.setAttribute("style", "margin:auto; width: 50%; padding: 50px;");
-infoEl.setAttribute("style","" );
-h1El.setAttribute("style", "font-size: 100px; color:darkgreen; padding: 50px;");
-paragraphEl.setAttribute("style", "background-color: limegreen; color: darkgreen; font-size: 25px;");
-buttonEl.setAttribute("style", " display: block; margin: 0 auto; border: limegreen; border-style: solid; border-width: thick; border-radius:20px; font-size: 35px; background-color: white;");
-h2El.setAttribute("style", "font-size: 85px; color:darkgreen; padding: 50px;");
+// Element attributes/CSS of the elements\
+body.setAttribute("style", "");
+timerEl.setAttribute("style", "text-align: right; font-size: 3vh;");
+infoEl.setAttribute("style","border: #708D7F; border-style: solid; border-width: medium; width: 55vw; height: 40vh; margin: 6.2rem 15.5rem; background-color: #FFF; font-color: #708D7F;");
+h1El.setAttribute("style", "margin: 0 12rem; font-size:3vh; color:darkgreen;");
+paragraphEl.setAttribute("style", "color: darkgreen; font-size: 3vh;");
+buttonEl.setAttribute("style", "margin: 0.8rem 15.5rem; padding: 0 0.5rem; border: #708D7F; border-style: solid; border-width: medium; border-radius:20px; font-size: 3vh; background-color: white;");
+h2El.setAttribute("style", "font-size: 15vh; color:darkgreen;");
 
 // resets the page when needed. 
 function clear(parent) {
